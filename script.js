@@ -7,12 +7,12 @@
   'use strict';
 
   var root = document.documentElement;
-  var themeToggle = document.getElementById('theme-toggle');
   var langToggle = document.getElementById('lang-toggle');
   var menuBtn = document.getElementById('menu-btn');
   var nav = document.getElementById('nav');
   var navBackdrop = document.getElementById('nav-backdrop');
   var header = document.querySelector('.site-header');
+  var currentLang = 'ru';
 
   /* ---------- Переводы ---------- */
   var translations = {
@@ -25,7 +25,6 @@
       navLabel: 'Основная навигация',
       navAbout: 'Обо мне',
       navContact: 'Контакты',
-      themeLabel: 'Переключить тему',
       menuLabel: 'Меню',
       eyebrow: 'Открыт к предложениям',
       heroTitle: 'Здравствуйте! Я — создатель сайтов.',
@@ -71,7 +70,6 @@
       navLabel: 'Main navigation',
       navAbout: 'About me',
       navContact: 'Contact',
-      themeLabel: 'Toggle theme',
       menuLabel: 'Menu',
       eyebrow: 'Open to offers',
       heroTitle: "Hello! I'm a website creator.",
@@ -117,6 +115,7 @@
 
   function applyLanguage(lang, persist) {
     var dict = translations[lang] || translations.ru;
+    currentLang = lang;
     root.lang = lang;
 
     Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function (node) {
@@ -154,32 +153,8 @@
 
   if (langToggle) {
     langToggle.addEventListener('click', function () {
-      applyLanguage(root.lang === 'en' ? 'ru' : 'en', true);
+      applyLanguage(currentLang === 'en' ? 'ru' : 'en', true);
     });
-  }
-
-  /* ---------- Тема ---------- */
-  function applyTheme(theme) {
-    root.dataset.theme = theme;
-    try { localStorage.setItem('theme', theme); } catch (e) {}
-    var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', theme === 'light' ? '#f7f8fc' : '#0b0d12');
-  }
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', function () {
-      applyTheme(root.dataset.theme === 'light' ? 'dark' : 'light');
-    });
-  }
-
-  // Следим за системной темой, пока пользователь не выбрал свою
-  var savedTheme = null;
-  try { savedTheme = localStorage.getItem('theme'); } catch (e) {}
-  if (!savedTheme && window.matchMedia) {
-    var mq = window.matchMedia('(prefers-color-scheme: dark)');
-    var onChange = function (e) { applyTheme(e.matches ? 'dark' : 'light'); };
-    if (mq.addEventListener) mq.addEventListener('change', onChange);
-    else if (mq.addListener) mq.addListener(onChange);
   }
 
   /* ---------- Мобильное меню ---------- */
