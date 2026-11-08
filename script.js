@@ -34,7 +34,7 @@
       btnContact: 'Связаться со мной',
       statsLabel: 'Кратко о себе',
       statWeb: 'разработка',
-      statUi: 'дизайн',
+      statFrontend: 'интерфейсы',
       statCuriosity: 'любопытства',
       aboutTitle: 'Обо мне',
       aboutText:
@@ -79,7 +79,7 @@
       btnContact: 'Get in touch',
       statsLabel: 'Quick facts about me',
       statWeb: 'development',
-      statUi: 'design',
+      statFrontend: 'interfaces',
       statCuriosity: 'curiosity',
       aboutTitle: 'About me',
       aboutText:
