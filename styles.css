@@ -96,6 +96,63 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .skip-link:focus { top: 16px; }
 
+/* ---------- Пиксельные трещины по краям ---------- */
+.crack-side {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: clamp(0px, calc((100vw - 1120px) / 2 - 16px), 220px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: .8;
+}
+.crack-left { left: 0; }
+.crack-right { right: 0; transform: scaleX(-1); }
+.crack-side svg { width: 100%; height: 100%; display: block; }
+.crack-line {
+  fill: none;
+  stroke: #667a56;
+  stroke-width: 2;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: crack-draw 10s steps(28, end) infinite;
+}
+.crack-line:nth-child(2) {
+  stroke-width: 1.7;
+  animation-delay: -1.8s;
+}
+.crack-line:nth-child(3) {
+  stroke-width: 1.5;
+  animation-delay: -3.6s;
+}
+.crack-line:nth-child(4) {
+  stroke-width: 1.6;
+  animation-delay: -5.4s;
+}
+.crack-line:nth-child(5) {
+  stroke-width: 1.4;
+  animation-delay: -7.2s;
+}
+.crack-right .crack-line { animation-delay: -0.9s; }
+.crack-right .crack-line:nth-child(2) { animation-delay: -2.7s; }
+.crack-right .crack-line:nth-child(3) { animation-delay: -4.5s; }
+.crack-right .crack-line:nth-child(4) { animation-delay: -6.3s; }
+.crack-right .crack-line:nth-child(5) { animation-delay: -8.1s; }
+@keyframes crack-draw {
+  0% { stroke-dashoffset: 100; opacity: 0; }
+  10% { opacity: .9; }
+  55% { stroke-dashoffset: 0; opacity: .9; }
+  80% { stroke-dashoffset: 0; opacity: .9; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+@media (max-width: 1239px) {
+  .crack-side { display: none; }
+}
+
+main { position: relative; z-index: 1; }
+
 /* ---------- Шапка ---------- */
 .site-header {
   position: fixed;
@@ -590,6 +647,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- Подвал ---------- */
 .site-footer {
+  position: relative;
+  z-index: 1;
   border-top: 1px solid var(--border);
   background: var(--bg-soft);
   padding: 28px 0 0;
@@ -603,15 +662,13 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-size: 14px;
 }
 .footer-inner p { margin: 0; }
-.footer-note { margin-inline: auto; }
-.to-top { font-weight: 600; color: var(--text); transition: color .2s var(--ease); }
-.to-top:hover { color: var(--accent); }
+.footer-inner .footer-note { margin-left: auto; }
 
 /* ---------- Пиксельная сцена с деревом ---------- */
 .tree-scene {
   position: relative;
   height: clamp(250px, 32vw, 460px);
-  margin-top: 18px;
+  margin-top: clamp(40px, 6vw, 72px);
   overflow: hidden;
   --fall: clamp(200px, 30vw, 420px);
 }
@@ -769,7 +826,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .facts { grid-template-columns: 1fr; gap: 14px; }
   .hero-actions .btn { flex: 1 1 auto; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .footer-note { margin-inline: 0; }
+  .footer-inner .footer-note { margin-left: 0; }
 
   .contact-portal { max-width: 130px; }
   .pixel-banner { padding-bottom: 56px; }
@@ -786,12 +843,17 @@ ul { margin: 0; padding: 0; list-style: none; }
   }
   .js .reveal { opacity: 1; transform: none; }
   .leaf { animation: none; opacity: 0; }
+  .crack-line {
+    animation: none;
+    stroke-dashoffset: 0;
+    opacity: .35;
+  }
 }
 
 /* ---------- Печать ---------- */
 @media print {
-  .site-header, .hero-glow, .to-top, .hero-actions, .project-links { display: none; }
-  .hero-sticker, .about-sticker, .contact-portal, .pixel-banner, .tree-scene { display: none; }
+  .site-header, .hero-glow, .hero-actions, .project-links { display: none; }
+  .hero-sticker, .about-sticker, .contact-portal, .pixel-banner, .tree-scene, .crack-side { display: none; }
   body { background: #fff; color: #000; }
   .section { padding: 24px 0; }
 }

@@ -55,8 +55,6 @@
         'Напишите мне, если нужен сайт, приложение или просто хотите обсудить идею. ' +
         'Отвечаю в течение дня.',
       footerNote: 'Сделано вручную: HTML, CSS и немного JavaScript.',
-      toTop: 'Наверх ↑',
-      toTopLabel: 'Наверх',
       langLabel: 'Переключить на английский',
       langCode: 'EN'
     },
@@ -100,8 +98,6 @@
         'Write to me if you need a website or an app, or just want to discuss an idea. ' +
         'I usually reply within a day.',
       footerNote: 'Handmade with HTML, CSS and a little JavaScript.',
-      toTop: 'Back to top ↑',
-      toTopLabel: 'Back to top',
       langLabel: 'Switch to Russian',
       langCode: 'RU'
     }
