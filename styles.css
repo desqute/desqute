@@ -121,14 +121,18 @@ ul { margin: 0; padding: 0; list-style: none; }
 .logo-mark {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 11px;
-  background: linear-gradient(135deg, var(--lime-light), var(--lime));
-  color: var(--ink);
-  font-size: 17px;
-  font-weight: 800;
-  letter-spacing: 0;
+  width: 42px;
+  height: 42px;
+  padding: 3px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+.logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .logo-text { font-size: 16px; }
 
@@ -383,27 +387,16 @@ ul { margin: 0; padding: 0; list-style: none; }
   box-shadow: var(--shadow);
 }
 .avatar {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 4 / 3.4;
+  display: block;
+  width: 100%;
+  background: transparent;
+}
+.avatar img {
+  display: block;
+  width: 100%;
+  height: auto;
   border-radius: 14px;
-  background:
-    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, .55), transparent 55%),
-    linear-gradient(135deg, #d9f99d, var(--lime));
-  color: var(--ink);
-  font-size: 2.6rem;
-  font-weight: 700;
-  letter-spacing: .02em;
 }
-.about-card-lines { display: grid; gap: 8px; margin-top: 20px; }
-.about-card-lines span {
-  height: 8px;
-  border-radius: 99px;
-  background: var(--surface-2);
-}
-.about-card-lines span:nth-child(1) { width: 72%; }
-.about-card-lines span:nth-child(2) { width: 100%; }
-.about-card-lines span:nth-child(3) { width: 48%; }
 
 /* ---------- Проекты ---------- */
 .projects-grid {
@@ -575,6 +568,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ---------- Адаптивность ---------- */
 @media (max-width: 860px) {
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
+
+  /* На планшете карточка с логотипом не растягивается на всю ширину */
+  .about-card { max-width: 420px; margin-inline: auto; }
 
   .menu-btn { display: grid; }
 
