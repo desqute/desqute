@@ -671,12 +671,13 @@ main { position: relative; z-index: 1; }
   margin-top: clamp(40px, 6vw, 72px);
   overflow: hidden;
   --fall: clamp(200px, 30vw, 420px);
+  --tree-h: clamp(230px, 30vw, 430px);
 }
 .tree {
   position: absolute;
   left: 50%;
-  bottom: 0;
-  height: clamp(230px, 30vw, 430px);
+  bottom: calc(var(--tree-h) * -0.12);
+  height: var(--tree-h);
   width: auto;
   transform: translateX(-50%);
   z-index: 2;

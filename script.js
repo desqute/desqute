@@ -35,7 +35,6 @@
       statsLabel: 'Кратко о себе',
       statWeb: 'разработка',
       statFrontend: 'интерфейсы',
-      statCuriosity: 'любопытства',
       aboutTitle: 'Обо мне',
       aboutText:
         'Я занимаюсь разработкой и дизайном цифровых продуктов: от идеи и прототипа ' +
@@ -78,7 +77,6 @@
       statsLabel: 'Quick facts about me',
       statWeb: 'development',
       statFrontend: 'interfaces',
-      statCuriosity: 'curiosity',
       aboutTitle: 'About me',
       aboutText:
         'I work on the development and design of digital products — from idea and ' +
