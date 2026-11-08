@@ -387,9 +387,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   box-shadow: var(--shadow);
 }
 .avatar {
-  display: block;
   width: 100%;
-  background: transparent;
+  aspect-ratio: 1 / 1;
 }
 .avatar img {
   display: block;
