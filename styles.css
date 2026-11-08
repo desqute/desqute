@@ -185,6 +185,16 @@ ul { margin: 0; padding: 0; list-style: none; }
 .icon-btn:hover { background: var(--surface-2); border-color: var(--accent); }
 .icon-btn:active { transform: scale(.95); }
 
+/* Кнопка переключения языка — рядом с темой */
+.lang-btn {
+  width: 46px;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+.lang-btn:hover { color: var(--text); }
+
 .icon { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .icon-sun { display: none; }
 html[data-theme="light"] .icon-sun { display: block; }
@@ -259,12 +269,21 @@ html[data-theme="light"] .icon-moon { display: none; }
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 5.4vw, 3.8rem);
+  font-size: clamp(2rem, 5.2vw, 3.4rem);
   font-weight: 800;
   letter-spacing: -.035em;
   text-wrap: balance;
-  margin-bottom: 22px;
+  margin-bottom: 12px;
 }
+
+/* Строка с псевдонимом под заголовком */
+.hero-alias {
+  margin: 0 0 26px;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 600;
+  color: var(--muted);
+}
+.hero-alias .accent { font-weight: 700; }
 .accent {
   background: linear-gradient(100deg, var(--accent), var(--accent-2));
   -webkit-background-clip: text;

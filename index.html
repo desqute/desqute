@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Desqute — портфолио</title>
-<meta name="description" content="Портфолио Desqute: проекты, навыки и контакты.">
+<meta name="description" content="Портфолио Desqute: немного обо мне и способы связаться.">
 <meta name="author" content="Desqute">
 <meta name="theme-color" content="#0b0d12">
 
 <!-- Open Graph / соцсети -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Desqute — портфолио">
-<meta property="og:description" content="Портфолио Desqute: проекты, навыки и контакты.">
+<meta property="og:description" content="Портфолио Desqute: немного обо мне и способы связаться.">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="Desqute">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236c8cff'/%3E%3Ctext x='32' y='43' font-family='Arial,sans-serif' font-size='30' font-weight='700' fill='%23fff' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
@@ -34,24 +34,24 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">Перейти к содержимому</a>
+<a class="skip-link" href="#main" data-i18n="skipLink">Перейти к содержимому</a>
 
 <header class="site-header" id="top">
   <div class="container header-inner">
-    <a class="logo" href="#top" aria-label="На главную">
+    <a class="logo" href="#top" aria-label="На главную" data-i18n-aria="logoLabel">
       <span class="logo-mark">D</span>
-      <span class="logo-text">Портфолио</span>
+      <span class="logo-text" data-i18n="logoText">Портфолио</span>
     </a>
 
-    <nav class="nav" id="nav" aria-label="Основная навигация">
-      <a href="#about">Обо мне</a>
-      <a href="#projects">Проекты</a>
-      <a href="#skills">Навыки</a>
-      <a href="#contact">Контакты</a>
+    <nav class="nav" id="nav" aria-label="Основная навигация" data-i18n-aria="navLabel">
+      <a href="#about" data-i18n="navAbout">Обо мне</a>
+      <a href="#contact" data-i18n="navContact">Контакты</a>
     </nav>
 
     <div class="header-actions">
-      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Переключить тему" title="Переключить тему">
+      <button class="icon-btn lang-btn" id="lang-toggle" type="button" aria-label="Переключить на английский" title="Переключить на английский">EN</button>
+
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Переключить тему" title="Переключить тему" data-i18n-aria="themeLabel">
         <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r="4.2"></circle>
           <path d="M12 2.4v2.2M12 19.4v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.4 12h2.2M19.4 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path>
@@ -61,7 +61,7 @@
         </svg>
       </button>
 
-      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav">
+      <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav" data-i18n-aria="menuLabel">
         <span class="burger"></span>
       </button>
     </div>
@@ -76,22 +76,27 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="container hero-inner">
-      <p class="eyebrow"><span class="dot"></span> Открыт к предложениям</p>
-      <h1 id="hero-title">
-        Мой псевдоним в&nbsp;сети — <span class="accent">Desqute</span>
-      </h1>
-      <p class="hero-text">
-        Привет! Я разработчик, который любит понятные интерфейсы и аккуратный код.
-        Здесь собраны мои проекты, навыки и способы связаться со мной.
+      <p class="eyebrow"><span class="dot"></span> <span data-i18n="eyebrow">Открыт к предложениям</span></p>
+
+      <h1 id="hero-title" data-i18n="heroTitle">Здравствуйте! Я — создатель сайтов.</h1>
+
+      <p class="hero-alias">
+        <span data-i18n="aliasPrefix">В сети меня зовут</span> <span class="accent">Desqute</span>.
       </p>
+
+      <p class="hero-text" data-i18n="heroText">
+        Здесь вы сможете узнать обо мне побольше и найти способы связаться со мной.
+      </p>
+
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#projects">Смотреть проекты</a>
-        <a class="btn btn-ghost" href="#contact">Связаться со мной</a>
+        <a class="btn btn-primary" href="#about" data-i18n="btnAbout">Узнать обо мне</a>
+        <a class="btn btn-ghost" href="#contact" data-i18n="btnContact">Связаться со мной</a>
       </div>
-      <ul class="hero-stats" aria-label="Кратко о себе">
-        <li><strong>5+</strong><span>проектов</span></li>
-        <li><strong>3</strong><span>года опыта</span></li>
-        <li><strong>∞</strong><span>любопытства</span></li>
+
+      <ul class="hero-stats" aria-label="Кратко о себе" data-i18n-aria="statsLabel">
+        <li><strong>Web</strong><span data-i18n="statWeb">разработка</span></li>
+        <li><strong>UI/UX</strong><span data-i18n="statUi">дизайн</span></li>
+        <li><strong>∞</strong><span data-i18n="statCuriosity">любопытства</span></li>
       </ul>
     </div>
   </section>
@@ -100,28 +105,23 @@
   <section class="section" id="about" aria-labelledby="about-title">
     <div class="container">
       <div class="section-head reveal">
-        <span class="section-index">01</span>
-        <h2 id="about-title">Обо мне</h2>
+        <h2 id="about-title" data-i18n="aboutTitle">Обо мне</h2>
       </div>
 
       <div class="about-grid">
         <div class="about-text reveal">
-          <p>
+          <p data-i18n="aboutText">
             Я занимаюсь разработкой и дизайном цифровых продуктов: от идеи и прототипа
             до готового сайта или приложения. Люблю задачи, в которых нужно одновременно
-            думать о людях и о качестве кода.
-          </p>
-          <p>
-            Сейчас развиваюсь как <strong>Fullstack-разработчик</strong>: делаю интерфейсы
-            на JavaScript и TypeScript, проектирую API и разбираюсь в инфраструктуре.
-            Открыт к интересным проектам, стажировкам и сотрудничеству.
+            думать о людях и о качестве кода. Открыт к интересным проектам, стажировкам
+            и сотрудничеству.
           </p>
 
           <dl class="facts">
-            <div><dt>Где нахожусь</dt><dd>Онлайн</dd></div>
-            <div><dt>Специализация</dt><dd>Web-разработка</dd></div>
-            <div><dt>Языки</dt><dd>Русский, английский</dd></div>
-            <div><dt>Статус</dt><dd><span class="status">Открыт к работе</span></dd></div>
+            <div><dt data-i18n="factLocationLabel">Где нахожусь</dt><dd data-i18n="factLocationValue">Онлайн</dd></div>
+            <div><dt data-i18n="factFocusLabel">Специализация</dt><dd data-i18n="factFocusValue">Web-разработка</dd></div>
+            <div><dt data-i18n="factLanguagesLabel">Языки</dt><dd data-i18n="factLanguagesValue">Русский, английский</dd></div>
+            <div><dt data-i18n="factStatusLabel">Статус</dt><dd><span class="status" data-i18n="factStatusValue">Открыт к работе</span></dd></div>
           </dl>
         </div>
 
@@ -135,104 +135,12 @@
     </div>
   </section>
 
-  <!-- ================= ПРОЕКТЫ ================= -->
-  <section class="section" id="projects" aria-labelledby="projects-title">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-index">02</span>
-        <h2 id="projects-title">Проекты</h2>
-        <p class="section-sub">Несколько работ, которыми хочется поделиться.</p>
-      </div>
-
-      <div class="projects-grid">
-
-        <article class="project reveal">
-          <div class="project-media media-1" aria-hidden="true"><span>01</span></div>
-          <div class="project-body">
-            <h3>Название проекта</h3>
-            <p>Короткое описание: какую задачу решает проект и что в нём было интересного.</p>
-            <ul class="tags">
-              <li>HTML</li><li>CSS</li><li>JavaScript</li>
-            </ul>
-            <div class="project-links">
-              <a href="#" aria-label="Открыть демо проекта 1">Демо ↗</a>
-              <a href="#" aria-label="Код проекта 1 на GitHub">Код ↗</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project reveal">
-          <div class="project-media media-2" aria-hidden="true"><span>02</span></div>
-          <div class="project-body">
-            <h3>Название проекта</h3>
-            <p>Короткое описание: какую задачу решает проект и что в нём было интересного.</p>
-            <ul class="tags">
-              <li>React</li><li>TypeScript</li><li>API</li>
-            </ul>
-            <div class="project-links">
-              <a href="#" aria-label="Открыть демо проекта 2">Демо ↗</a>
-              <a href="#" aria-label="Код проекта 2 на GitHub">Код ↗</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project reveal">
-          <div class="project-media media-3" aria-hidden="true"><span>03</span></div>
-          <div class="project-body">
-            <h3>Название проекта</h3>
-            <p>Короткое описание: какую задачу решает проект и что в нём было интересного.</p>
-            <ul class="tags">
-              <li>Node.js</li><li>PostgreSQL</li><li>Docker</li>
-            </ul>
-            <div class="project-links">
-              <a href="#" aria-label="Открыть демо проекта 3">Демо ↗</a>
-              <a href="#" aria-label="Код проекта 3 на GitHub">Код ↗</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= НАВЫКИ ================= -->
-  <section class="section" id="skills" aria-labelledby="skills-title">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="section-index">03</span>
-        <h2 id="skills-title">Навыки</h2>
-        <p class="section-sub">То, что я использую в работе каждый день.</p>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skill-card reveal">
-          <h3>Frontend</h3>
-          <ul class="chips">
-            <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Vite</li>
-          </ul>
-        </div>
-        <div class="skill-card reveal">
-          <h3>Backend</h3>
-          <ul class="chips">
-            <li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>REST API</li><li>Python</li>
-          </ul>
-        </div>
-        <div class="skill-card reveal">
-          <h3>Инструменты</h3>
-          <ul class="chips">
-            <li>Git</li><li>GitHub</li><li>Figma</li><li>Docker</li><li>Linux</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ================= КОНТАКТЫ ================= -->
   <section class="section section-contact" id="contact" aria-labelledby="contact-title">
     <div class="container">
       <div class="contact-box reveal">
-        <h2 id="contact-title">Давайте работать вместе</h2>
-        <p>
+        <h2 id="contact-title" data-i18n="contactTitle">Давайте работать вместе</h2>
+        <p data-i18n="contactText">
           Напишите мне, если нужен сайт, приложение или просто хотите обсудить идею.
           Отвечаю в течение дня.
         </p>
@@ -250,8 +158,8 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <p>© <span id="year">2026</span> Desqute</p>
-    <p class="footer-note">Сделано вручную: HTML, CSS и немного JavaScript.</p>
-    <a class="to-top" href="#top" aria-label="Наверх">Наверх ↑</a>
+    <p class="footer-note" data-i18n="footerNote">Сделано вручную: HTML, CSS и немного JavaScript.</p>
+    <a class="to-top" href="#top" aria-label="Наверх" data-i18n-aria="toTopLabel" data-i18n="toTop">Наверх ↑</a>
   </div>
 </footer>
 
